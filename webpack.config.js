@@ -37,7 +37,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: './'
+    contentBase: PATHS.DIST
   },
   devtool: "source-map"
 };

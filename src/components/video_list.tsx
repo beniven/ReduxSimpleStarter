@@ -8,7 +8,7 @@ interface IVideoListProps {
 class VideoList extends React.Component<IVideoListProps, {}> {
     render() {
         const videoItems = this.props.videos.map((video) => {
-            return <VideoListItem video={video} />
+            return <VideoListItem key={video.etag} video={video} />
         });
 
         return (
