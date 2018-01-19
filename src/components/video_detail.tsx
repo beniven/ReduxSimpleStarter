@@ -2,6 +2,11 @@ import * as React from 'react';
 
 const VideoDetail = (props: any) => {
     const video: models.IVideo = props.video;
+
+    if (!video) {
+        return <div>Loading...</div>;
+    }
+
     const videoId =  video.id.videoId;
     const url = `https://www.youtube.com/embed/${videoId}`;
 
