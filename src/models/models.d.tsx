@@ -1,4 +1,9 @@
 declare module models {
+    interface IVideoListProps {
+        videos?: Array<any>;
+        onVideoSelect?: Function;
+    }
+    
     interface IVideo {
         etag?: string;
         id?: {
