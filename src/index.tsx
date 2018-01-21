@@ -5,6 +5,7 @@ import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 const API_KEY = 'AIzaSyCj2hgV0bAlwBy4lLlztpnOBdApa9nDA_c';
+let styles = require('../style/style.css');
 
 interface IAppState {
     videos?: Array<any>;
@@ -20,7 +21,7 @@ class App extends React.Component<{}, IAppState> {
             selectedVideo: null
         };
 
-        YTSearch({key: API_KEY, term: 'surfboards'}, (videos: any) => {
+        YTSearch({key: API_KEY, term: 'birmingham al'}, (videos: any) => {
             this.setState({
                 videos,
                 selectedVideo: videos[0]
