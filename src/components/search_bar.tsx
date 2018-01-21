@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-class SearchBar extends React.Component<{}, ISearchState> {
+class SearchBar extends React.Component<models.ISearchProps, models.ISearchState> {
     constructor(props: any) {
         super(props);
 
-        this.state = { term: 'Search' };
+        this.state = { term: '' };
     }
 
     render() {
@@ -12,14 +12,15 @@ class SearchBar extends React.Component<{}, ISearchState> {
             <div className="search-bar">
                 <input 
                     value={this.state.term}
-                    onChange={event => this.setState({ term: event.target.value })} />
+                    onChange={event => this.onInputChange(event.target.value)} />
             </div>
         );
+    }
+
+    onInputChange(term: string) {
+        this.setState({term});
+        this.props.onSearchTermChange(term);
     }
 }
 
 export default SearchBar;
-
-interface ISearchState {
-    term?: string;
-}

@@ -33,4 +33,12 @@ declare module models {
         height?: number;
         url?: string;
     }
+
+    interface ISearchState {
+        term?: string;
+    }
+    
+    interface ISearchProps {
+        onSearchTermChange?: Function;
+    }
 }
